@@ -6,7 +6,7 @@ define([
     var map;
     var defaultbasemap = window.location.protocol + "//server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer";
     
-    var viewAttached = function () {
+    var attached = function () {
         setTimeout(function () {
             var initialExtent = new Extent({
                 "xmin": -14706000,
@@ -25,6 +25,6 @@ define([
     };
     
     return {
-        viewAttached: viewAttached
+        attached: attached
     };
 });

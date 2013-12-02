@@ -19,6 +19,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,24 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\dojoConfig.js" />
-    <Content Include="App\durandal\amd\almond-custom.js" />
-    <Content Include="App\durandal\amd\optimizer.exe" />
-    <Content Include="App\durandal\amd\r.js" />
-    <Content Include="App\durandal\amd\require.js" />
-    <Content Include="App\durandal\amd\text.js" />
-    <Content Include="App\durandal\app.js" />
-    <Content Include="App\durandal\composition.js" />
-    <Content Include="App\durandal\events.js" />
-    <Content Include="App\durandal\http.js" />
-    <Content Include="App\durandal\messageBox.html" />
-    <Content Include="App\durandal\messageBox.js" />
-    <Content Include="App\durandal\modalDialog.js" />
-    <Content Include="App\durandal\system.js" />
-    <Content Include="App\durandal\viewEngine.js" />
-    <Content Include="App\durandal\viewLocator.js" />
-    <Content Include="App\durandal\viewModel.js" />
-    <Content Include="App\durandal\viewModelBinder.js" />
-    <Content Include="App\durandal\widget.js" />
+    <Content Include="Scripts\dojo_mod.js" />
     <Content Include="App\main.js" />
     <Content Include="App\viewmodels\map.js" />
     <Content Include="App\viewmodels\shell.js" />
@@ -69,15 +54,36 @@
     <Content Include="Content\durandal.css" />
     <Content Include="index.html" />
     <Content Include="packages.config" />
-    <None Include="App\lib\jquery-1.9.1.intellisense.js" />
-    <Content Include="App\lib\dojo_mod.js" />
-    <Content Include="App\lib\jquery-1.9.1.js" />
-    <Content Include="App\lib\jquery-1.9.1.min.js" />
-    <Content Include="App\lib\knockout-2.2.1.debug.js" />
-    <Content Include="App\lib\knockout-2.2.1.js" />
-    <Content Include="Web.config" />
-    <Content Include="App\lib\jquery-1.9.1.min.map" />
+    <Content Include="weyland-config.js" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\almond-custom.js" />
+    <Content Include="Scripts\durandal\activator.js" />
+    <Content Include="Scripts\durandal\app.js" />
+    <Content Include="Scripts\durandal\binder.js" />
+    <Content Include="Scripts\durandal\composition.js" />
+    <Content Include="Scripts\durandal\events.js" />
+    <Content Include="Scripts\durandal\plugins\dialog.js" />
+    <Content Include="Scripts\durandal\plugins\history.js" />
+    <Content Include="Scripts\durandal\plugins\http.js" />
+    <Content Include="Scripts\durandal\plugins\observable.js" />
+    <Content Include="Scripts\durandal\plugins\router.js" />
+    <Content Include="Scripts\durandal\plugins\serializer.js" />
+    <Content Include="Scripts\durandal\plugins\widget.js" />
+    <Content Include="Scripts\durandal\system.js" />
+    <Content Include="Scripts\durandal\viewEngine.js" />
+    <Content Include="Scripts\durandal\viewLocator.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\knockout-2.3.0.debug.js" />
+    <Content Include="Scripts\knockout-2.3.0.js" />
+    <Content Include="Scripts\r.js" />
+    <Content Include="Scripts\require.js" />
+    <Content Include="Scripts\text.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Readme.md" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,6 +114,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
